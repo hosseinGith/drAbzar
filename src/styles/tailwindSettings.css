@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    :root {
+        --navBarActive: #1b0557;
+        --whiteColor: #fff;
+        --blackColor: #000;
+        --primary: rgb(255, 61, 0);
+        --navBarLinksColor: red;
+    }
+
+    body.dark {
+        color: var(--blackColor);
+    }
+
+    body.dark {
+        color: var(--whiteColor);
+    }
+
+    @font-face {
+        font-family: vazir;
+        src: url("./assets/fonts/vazir/Vazir.ttf") format("truetype");
+        src: url("./assets/fonts/vazir/Vazir.woff") format("woff");
+    }
+
+    body {
+        font-family: vazir;
+    }
+
+    .customeCont {
+        max-width: 1336px;
+        margin: 0 auto;
+        padding: 10px 20px;
+    }
+
+    .animate-opacityShow {
+        animation: opacityShow 1s linear;
+    }
+
+    .navBarLinks.active {
+        color: var(--navBarLinksColor);
+        font-weight: bold;
+    }
+
+    .hideNavBar {
+        display: none;
+        animation: hideNavBar 0.500s linear;
+        opacity: 0;
+    }
+
+    .showNavBar {
+        display: grid;
+        animation: showNavBar 0.700s linear;
+        opacity: 1;
+    }
+
+    .navBarUlHide {
+        animation: navBarUlHide .3s linear;
+        transform: translate(100%);
+    }
+
+    .navBarUlShow {
+        animation: navBarUlShow 1s ease;
+        transform: translate(0%);
+    }
+
+    @keyframes opacityShow {
+        0% {
+            opacity: 0
+        }
+
+        100% {
+            opacity: 1
+        }
+    }
+
+    @keyframes hideNavBar {
+        0% {
+            opacity: 1;
+            display: grid;
+        }
+
+        99% {
+            opacity: 0;
+        }
+
+        100% {
+            display: none;
+        }
+    }
+
+    @keyframes showNavBar {
+        0% {
+            opacity: 0;
+            display: grid;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes navBarUlShow {
+        0% {
+            transform: translate(100%);
+        }
+
+        100% {
+            transform: translate(0%);
+        }
+    }
+
+    @keyframes navBarUlHide {
+        0% {
+            transform: translate(0);
+        }
+
+        100% {
+            transform: translate(100%);
+        }
+    }
+}
